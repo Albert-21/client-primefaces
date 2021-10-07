@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Iniciar sesión</title>
+        <link rel="stylesheet" type="text/css" href="estilos.css"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <h:form class="nav-menu">
+                <p:tabMenu activeIndex="#{param.i}">
+                    <p:menuitem value="Iniciar Sesión" icon="pi pi-fw pi-user" action="#{redirect.redirectToLogin()}">
+                        <f:param name="i" value="1"/>
+                    </p:menuitem>
+                </p:tabMenu>
+            </h:form>
+            <div class="form">
+                <h1>Iniciar Sesión</h1>
+                <div class="p-grid ui-fluid">
+                    <h:form>
+                        <p:growl id="growl" showDetail="true" />
+                        <div class="p-col-12 p-md-4">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                <p:inputText placeholder="Nombre de usuario" value="#{usuarioBean.usuario.usuario}"/>
+                                <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                <p:password placeholder="Contraseña" value="#{usuarioBean.usuario.contraseña}"/>
+                            </div>
+                        </div>
+                        <p:commandButton update="growl" value="Iniciar Sesión" action="#{usuarioBean.login()}"  />
+                    </h:form>
+
+                    <div class="form">
+                        <h1>Registro</h1>
+                        <div class="p-grid ui-fluid">
+                            <h:form>
+                                <p:growl id="growl" showDetail="true" />
+                                <div class="p-col-12 p-md-4">
+                                    <div class="ui-inputgroup">
+                                        <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                        <p:inputText placeholder="Nombre de usuario" value="#{usuarioBean.usuario.usuario}"/>
+                                        <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                        <p:password placeholder="Contraseña" value="#{usuarioBean.usuario.contraseña}"/>
+                                    </div>
+                                </div>
+                                <p:commandButton update="growl" value="Registrarse" action="#{usuarioBean.register()}"  />
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+
