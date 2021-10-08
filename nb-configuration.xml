@@ -19,5 +19,7 @@ Any value defined here will override the pom.xml file value but is only applicab
         <netbeans.hint.jdkPlatform>JDK_1.8</netbeans.hint.jdkPlatform>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_DepartamentoService>http://localhost:8080/webSOAP/DepartamentoService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_DepartamentoService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_EmpleadoService>http://localhost:8080/webSOAP/EmpleadoService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_EmpleadoService>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_DepartamentoService_5f_1>http://localhost:8080/webSOAP/DepartamentoService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_DepartamentoService_5f_1>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_EmpleadoService_5f_1>http://localhost:8080/webSOAP/EmpleadoService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_EmpleadoService_5f_1>
     </properties>
 </project-shared-configuration>

@@ -4,11 +4,17 @@
 <xsd:import namespace="http://service.service.com/" schemaLocation="http://localhost:8080/webSOAP/EmpleadoService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="eliminarEmpleado">
-<part name="parameters" element="tns:eliminarEmpleado"/>
+<message name="mostrarUnEmpleado">
+<part name="parameters" element="tns:mostrarUnEmpleado"/>
 </message>
-<message name="eliminarEmpleadoResponse">
-<part name="parameters" element="tns:eliminarEmpleadoResponse"/>
+<message name="mostrarUnEmpleadoResponse">
+<part name="parameters" element="tns:mostrarUnEmpleadoResponse"/>
+</message>
+<message name="mostrarTodosEmpleados">
+<part name="parameters" element="tns:mostrarTodosEmpleados"/>
+</message>
+<message name="mostrarTodosEmpleadosResponse">
+<part name="parameters" element="tns:mostrarTodosEmpleadosResponse"/>
 </message>
 <message name="guardarEmpleado">
 <part name="parameters" element="tns:guardarEmpleado"/>
@@ -22,22 +28,20 @@
 <message name="actualizarEmpleadoResponse">
 <part name="parameters" element="tns:actualizarEmpleadoResponse"/>
 </message>
-<message name="mostrarUnEmpleado">
-<part name="parameters" element="tns:mostrarUnEmpleado"/>
+<message name="eliminarEmpleado">
+<part name="parameters" element="tns:eliminarEmpleado"/>
 </message>
-<message name="mostrarUnEmpleadoResponse">
-<part name="parameters" element="tns:mostrarUnEmpleadoResponse"/>
-</message>
-<message name="mostrarTodosEmpleados">
-<part name="parameters" element="tns:mostrarTodosEmpleados"/>
-</message>
-<message name="mostrarTodosEmpleadosResponse">
-<part name="parameters" element="tns:mostrarTodosEmpleadosResponse"/>
+<message name="eliminarEmpleadoResponse">
+<part name="parameters" element="tns:eliminarEmpleadoResponse"/>
 </message>
 <portType name="EmpleadoService">
-<operation name="eliminarEmpleado">
-<input wsam:Action="http://service.service.com/EmpleadoService/eliminarEmpleadoRequest" message="tns:eliminarEmpleado"/>
-<output wsam:Action="http://service.service.com/EmpleadoService/eliminarEmpleadoResponse" message="tns:eliminarEmpleadoResponse"/>
+<operation name="mostrarUnEmpleado">
+<input wsam:Action="http://service.service.com/EmpleadoService/mostrarUnEmpleadoRequest" message="tns:mostrarUnEmpleado"/>
+<output wsam:Action="http://service.service.com/EmpleadoService/mostrarUnEmpleadoResponse" message="tns:mostrarUnEmpleadoResponse"/>
+</operation>
+<operation name="mostrarTodosEmpleados">
+<input wsam:Action="http://service.service.com/EmpleadoService/mostrarTodosEmpleadosRequest" message="tns:mostrarTodosEmpleados"/>
+<output wsam:Action="http://service.service.com/EmpleadoService/mostrarTodosEmpleadosResponse" message="tns:mostrarTodosEmpleadosResponse"/>
 </operation>
 <operation name="guardarEmpleado">
 <input wsam:Action="http://service.service.com/EmpleadoService/guardarEmpleadoRequest" message="tns:guardarEmpleado"/>
@@ -47,18 +51,23 @@
 <input wsam:Action="http://service.service.com/EmpleadoService/actualizarEmpleadoRequest" message="tns:actualizarEmpleado"/>
 <output wsam:Action="http://service.service.com/EmpleadoService/actualizarEmpleadoResponse" message="tns:actualizarEmpleadoResponse"/>
 </operation>
-<operation name="mostrarUnEmpleado">
-<input wsam:Action="http://service.service.com/EmpleadoService/mostrarUnEmpleadoRequest" message="tns:mostrarUnEmpleado"/>
-<output wsam:Action="http://service.service.com/EmpleadoService/mostrarUnEmpleadoResponse" message="tns:mostrarUnEmpleadoResponse"/>
-</operation>
-<operation name="mostrarTodosEmpleados">
-<input wsam:Action="http://service.service.com/EmpleadoService/mostrarTodosEmpleadosRequest" message="tns:mostrarTodosEmpleados"/>
-<output wsam:Action="http://service.service.com/EmpleadoService/mostrarTodosEmpleadosResponse" message="tns:mostrarTodosEmpleadosResponse"/>
+<operation name="eliminarEmpleado">
+<input wsam:Action="http://service.service.com/EmpleadoService/eliminarEmpleadoRequest" message="tns:eliminarEmpleado"/>
+<output wsam:Action="http://service.service.com/EmpleadoService/eliminarEmpleadoResponse" message="tns:eliminarEmpleadoResponse"/>
 </operation>
 </portType>
 <binding name="EmpleadoServicePortBinding" type="tns:EmpleadoService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="eliminarEmpleado">
+<operation name="mostrarUnEmpleado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="mostrarTodosEmpleados">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -85,16 +94,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="mostrarUnEmpleado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="mostrarTodosEmpleados">
+<operation name="eliminarEmpleado">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

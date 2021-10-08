@@ -37,7 +37,7 @@ public class DepartamentoBean implements Serializable {
     public DepartamentoBean() {
         departamento = new Departamento();
         daoDep = (DepartamentoDAO) FactoryMethod.create(FactoryMethod.TypeDAO.DEPARTAMENTO);
-        despartammentos = departamentoService.mostrarTodosDeprtamentos();
+        //despartammentos = departamentoService.mostrarTodosDeprtamentos();
 
     }
 

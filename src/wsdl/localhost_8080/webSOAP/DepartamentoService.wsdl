@@ -4,12 +4,6 @@
 <xsd:import namespace="http://service.service.com/" schemaLocation="http://localhost:8080/webSOAP/DepartamentoService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="eliminarDepartamento">
-<part name="parameters" element="tns:eliminarDepartamento"/>
-</message>
-<message name="eliminarDepartamentoResponse">
-<part name="parameters" element="tns:eliminarDepartamentoResponse"/>
-</message>
 <message name="guardarDepartamento">
 <part name="parameters" element="tns:guardarDepartamento"/>
 </message>
@@ -21,6 +15,12 @@
 </message>
 <message name="actualizarDepartamentoResponse">
 <part name="parameters" element="tns:actualizarDepartamentoResponse"/>
+</message>
+<message name="eliminarDepartamento">
+<part name="parameters" element="tns:eliminarDepartamento"/>
+</message>
+<message name="eliminarDepartamentoResponse">
+<part name="parameters" element="tns:eliminarDepartamentoResponse"/>
 </message>
 <message name="mostrarUnDepartamento">
 <part name="parameters" element="tns:mostrarUnDepartamento"/>
@@ -35,10 +35,6 @@
 <part name="parameters" element="tns:mostrarTodosDeprtamentosResponse"/>
 </message>
 <portType name="DepartamentoService">
-<operation name="eliminarDepartamento">
-<input wsam:Action="http://service.service.com/DepartamentoService/eliminarDepartamentoRequest" message="tns:eliminarDepartamento"/>
-<output wsam:Action="http://service.service.com/DepartamentoService/eliminarDepartamentoResponse" message="tns:eliminarDepartamentoResponse"/>
-</operation>
 <operation name="guardarDepartamento">
 <input wsam:Action="http://service.service.com/DepartamentoService/guardarDepartamentoRequest" message="tns:guardarDepartamento"/>
 <output wsam:Action="http://service.service.com/DepartamentoService/guardarDepartamentoResponse" message="tns:guardarDepartamentoResponse"/>
@@ -46,6 +42,10 @@
 <operation name="actualizarDepartamento">
 <input wsam:Action="http://service.service.com/DepartamentoService/actualizarDepartamentoRequest" message="tns:actualizarDepartamento"/>
 <output wsam:Action="http://service.service.com/DepartamentoService/actualizarDepartamentoResponse" message="tns:actualizarDepartamentoResponse"/>
+</operation>
+<operation name="eliminarDepartamento">
+<input wsam:Action="http://service.service.com/DepartamentoService/eliminarDepartamentoRequest" message="tns:eliminarDepartamento"/>
+<output wsam:Action="http://service.service.com/DepartamentoService/eliminarDepartamentoResponse" message="tns:eliminarDepartamentoResponse"/>
 </operation>
 <operation name="mostrarUnDepartamento">
 <input wsam:Action="http://service.service.com/DepartamentoService/mostrarUnDepartamentoRequest" message="tns:mostrarUnDepartamento"/>
@@ -58,15 +58,6 @@
 </portType>
 <binding name="DepartamentoServicePortBinding" type="tns:DepartamentoService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="eliminarDepartamento">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="guardarDepartamento">
 <soap:operation soapAction=""/>
 <input>
@@ -77,6 +68,15 @@
 </output>
 </operation>
 <operation name="actualizarDepartamento">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminarDepartamento">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

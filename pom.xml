@@ -236,6 +236,42 @@
                         <id>wsimport-generate-EmpleadoService</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/webSOAP/DepartamentoService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost:8080/webSOAP/DepartamentoService?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/DepartamentoService_1.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-DepartamentoService_1</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/webSOAP/EmpleadoService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost:8080/webSOAP/EmpleadoService?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/EmpleadoService_1.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-EmpleadoService_1</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>
